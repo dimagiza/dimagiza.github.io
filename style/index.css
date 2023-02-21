@@ -1,0 +1,140 @@
+body {
+    /*background: linear-gradient(to right, #808080, #dddddd);
+    color:rgba(255, 255, 255, 0.82);*/
+    background-color: #dddddd;
+    color: #252525;
+}
+
+header {
+    margin: 0px 10% 0px 10%;
+    display: flex;
+    justify-content: space-between;
+}
+header nav ul li {
+    display: inline-flex;
+}
+header nav ul li a {
+    text-decoration: none;
+    color:#252525;
+}
+
+h2 {
+    margin: 10px 10% 0px 10%;
+}
+#cloth {
+    margin: 0px 10% 30px 10%;
+    padding: 20px 30px;
+    background: linear-gradient(to right, #252525, #dddddd);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.images {
+    display: flex;
+    align-items: center;
+}
+.images button {
+    height: 50px;
+    width: 50px;
+    border: 1px solid #dddddd;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #252525;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-left: 10px;
+}
+.image-item {
+    height: 360px;
+    width: 170px;
+    background-image: url(../img/cloth01.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: all 0.4s;
+    position: relative;
+    margin: 1px;
+    cursor: pointer;
+}
+.image-item:hover {
+    width: 260px;
+    height: 360px;
+}
+.image-item:hover p {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    opacity: 1;
+    z-index: 2;
+    transition: all 0,4s;
+    transform: translate(-50%, -50%);
+}
+.image-item:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    transition: all 0,4s;
+    background-image: linear-gradient(0deg, #252525, rgb(255 255 255 / 0%));
+}
+.image-item:nth-child(2) {
+    background-image: url(../img/cloth02.jpeg);
+}
+.image-item:nth-child(3) {
+    background-image: url(../img/cloth03.jpeg);
+}
+.image-item:nth-child(4) {
+    background-image: url(../img/cloth04.jpeg);
+}
+.image-item:nth-child(5) {
+    background-image: url(../img/cloth05.jpeg);
+}
+.image-item:nth-child(6) {
+    background-image: url(../img/cloth06.jpeg);
+}
+
+.image-item p {
+    opacity: 0;
+    color: #dddddd;
+    position: absolute;
+    left: 50%;
+    transition: all 0,4s;
+    transform: translate(-50%, -50%);
+}
+
+#banner {
+    margin: 0px 10% 30px 10%;
+    border: 2px solid #252525;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 400px;
+    background-image: url(../img/banner/06.png);
+    /*background-color: linear-gradient(to left, #252525, #2525255e);*/
+}
+#banner button {
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border: 1px solid #252525;
+    border-radius: 50%;
+    color:#dddddd;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+#banner p {
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #dddddd;
+    text-shadow: 2px 2px #252525;
+}
+
+footer {
+    margin: 0px 10% 0px 10%;
+    display: flex;
+    justify-content: end;
+    color: #252525;
+}
+footer ul li {
+    display: inline-flex;
+}
