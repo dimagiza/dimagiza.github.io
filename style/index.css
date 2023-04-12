@@ -19,13 +19,18 @@ h2 {
     margin: 10px 10% 0px 10%;
 }
 
+.cards {
+    display: flex;
+    justify-content: space-around;
+}
+
 .cloth {
     display: flex;
     align-items: center;
-    width: 75vw;
-    max-width: 650px;
+    width: 50vw;
+    max-width: 400px;
     padding: 50px 30px 50px 20px;
-    background: #ffffff;
+    background: #787878;
     border-radius: 24px;
 }
 .cloth img {
@@ -40,9 +45,10 @@ h2 {
         0 60px 40px rgb(0 0 0 / 8%);
 }
 .cloth h3 { color: rgb(0, 0, 0 / 90%); }
+.cloth p { color: rgb(0, 0, 0 / 80%); }
 .cloth button {
     border: 0;
-    background: #5448de;
+    background: #2f2f2f;
     color: #f8f8f8;
     font-family: inherit;
     padding: 16px 26px;
@@ -62,7 +68,7 @@ h2 {
     .cloth img {
         margin: -100px 0 30px 0;
         width: 100%;
-        max-width: 1000px;
+        max-width: 260px;
     }
 }
 
