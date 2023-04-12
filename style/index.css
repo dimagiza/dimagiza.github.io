@@ -3,32 +3,32 @@ body {
 }
 
 header {
-    margin: 0px 10% 0px 10%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
-header nav ul li {
+h1 {
+    padding: 30px;
+}
+nav div {
     display: inline-flex;
+    width: 100px;
 }
-header nav ul li a {
+nav div a {
     text-decoration: none;
     color:#252525;
-}
-
-h2 {
-    margin: 10px 10% 0px 10%;
+    padding-right: 10px;
 }
 
 .cards {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .cloth {
     display: flex;
     align-items: center;
     width: 50vw;
-    max-width: 400px;
+    max-width: 360px;
     padding: 50px 30px 50px 20px;
     background: #787878;
     border-radius: 24px;
@@ -73,9 +73,8 @@ h2 {
 }
 
 footer {
-    margin: 0px 10% 0px 10%;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     color: #252525;
 }
 footer ul li {
