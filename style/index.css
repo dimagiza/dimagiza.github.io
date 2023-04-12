@@ -1,7 +1,4 @@
 body {
-    /*background: linear-gradient(to right, #808080, #dddddd);
-    color:rgba(255, 255, 255, 0.82);
-    background-color: #dddddd;*/
     color: #252525;
 }
 
@@ -101,32 +98,6 @@ h2 {
     left: 50%;
     transition: all 0,4s;
     transform: translate(-50%, -50%);
-}
-
-#banner {
-    margin: 0px 10% 30px 10%;
-    border: 2px solid #252525;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 400px;
-    background-image: url(../img/banner/06.png);
-    /*background-color: linear-gradient(to left, #252525, #2525255e);*/
-}
-#banner button {
-    cursor: pointer;
-    height: 50px;
-    width: 50px;
-    border: 1px solid #252525;
-    border-radius: 50%;
-    color:#dddddd;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-#banner p {
-    text-transform: uppercase;
-    font-size: 2rem;
-    color: #dddddd;
-    text-shadow: 2px 2px #252525;
 }
 
 footer {
