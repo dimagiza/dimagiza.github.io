@@ -6,22 +6,16 @@ header {
     display: flex;
     justify-content: center;
 }
-h1 {
-    padding: 30px;
-}
-nav div {
-    display: inline-flex;
-    width: 100px;
-}
-nav div a {
-    text-decoration: none;
-    color:#252525;
-    padding-right: 10px;
+
+.menu {
+    display: flex;
+    justify-content: space-around;
 }
 
 .cards {
     display: flex;
     justify-content: center;
+    padding: 10px;
 }
 
 .cloth {
@@ -75,8 +69,10 @@ nav div a {
 footer {
     display: flex;
     justify-content: center;
+    padding: 30px;
     color: #252525;
 }
-footer ul li {
-    display: inline-flex;
+footer a {
+    width: 48px;
+    height: 48px; 
 }
