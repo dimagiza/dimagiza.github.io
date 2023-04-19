@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	   <link rel="stylesheet" href="style.css">
+      <script src="script.js"></script>
+      <meta charset="UTF-8">
+		<title>Notes of money</title>
+	</head>
+	<body>
+		<h1>Expenses</h1>
+		
+		<div id="container">
+			<div class="firstrow">
+				<div class="column">Name</div>
+				<div class="column">Comment</div>
+				<div class="column">Price</div>
+			</div>
+		</div>
+		
+		<div id="examplerow" class="examplerow">
+			<div class="column"></div>
+			<div class="column"></div>
+			<div class="column"></div>
+		</div>
+		
+		<div class="total">
+			Total:<div id="total"></div>
+		</div>
+		
+		<div id="input">
+				   <label for="">Name:</label>
+				   <input type="text" id="inname" placeholder="taxi">
+				   <label for="">Comment:</label>
+				   <input type="text" id="incomment" placeholder="to Bangkok (optional)">
+				   <label for="">Price:</label>
+				   <input type="number" id="inprice" placeholder="600">
+				  <input type="submit" value="add" onclick="add()">
+		</div>
+		
+	</body>
+</html>
