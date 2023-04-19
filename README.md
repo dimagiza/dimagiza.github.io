@@ -1,2 +1,2 @@
-# E-Commerce Website
-[Only One](https://dimagiza.github.io/)
+# Only One Corp.
+[Main page](https://dimagiza.github.io/)
