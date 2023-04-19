@@ -69,10 +69,11 @@ header {
 footer {
     display: flex;
     justify-content: center;
-    padding: 30px;
-    color: #252525;
+    margin: 30px;
 }
-footer a {
-    width: 48px;
-    height: 48px; 
+
+footer a img {
+	width: 30px;
+	height: 30px;
+	margin: 10px;
 }
