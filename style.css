@@ -18,7 +18,7 @@ section {
     display: flex;
 	flex-direction: column;
     align-items: center;
-    width: 50vw;
+    width: 65vw;
     max-width: 420px;
     padding: 50px 50px 50px 50px;
     background: #a8dbfa;
@@ -28,12 +28,17 @@ section {
 }
 
 button {
-	width: 30vw;
+	width: 40vw;
 	max-width: 300px;
 	height: 60px;
 	box-shadow: 0 .125rem .25rem rgba(0, 0, 0);
 }
 
 footer {
-	margin: 30px;
+	margin: 40px;
+}
+footer a img {
+	width: 30px;
+	height: 30px;
+	margin: 10px;
 }
