@@ -1,0 +1,39 @@
+html {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(#d3f5cf, #a8dbfa, #635ee2);
+}
+
+header {
+	margin: 30px;
+}
+
+section {
+    display: flex;
+	flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    max-width: 420px;
+    padding: 50px 50px 50px 50px;
+    background: #a8dbfa;
+    border-radius: 24px;
+	box-shadow: 0 .5rem 1rem rgba(0, 0, 0);
+	
+}
+
+button {
+	width: 30vw;
+	max-width: 300px;
+	height: 60px;
+	box-shadow: 0 .125rem .25rem rgba(0, 0, 0);
+}
+
+footer {
+	margin: 30px;
+}
