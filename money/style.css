@@ -1,0 +1,42 @@
+html {
+	height: 100%;
+}
+
+body {
+	background: linear-gradient(#e66465, #9198e5);
+	background-repeat: no-repeat;
+}
+#container {
+	display: table;
+}
+.column {
+	display: table-cell;
+	width: 100px;
+	height: 20px;
+	border: 1px solid black;
+}
+.row {
+	display: table-row;
+	text-transform: lowercase;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+.examplerow {
+	display: table-row;
+	background-color: rgba(255, 255, 255, 0.2);
+	color:grey;
+}
+.firstrow {
+	display: table-row;
+	font-weight: bolder;
+}
+#input {
+	border: 1px solid black;
+	width: 180px;
+	margin-top: 60px;
+	display: flex;
+	flex-direction: column;
+}
+.total {
+	display: flex;
+	margin-left: 170px;
+}
