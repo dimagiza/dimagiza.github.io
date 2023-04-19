@@ -1,2 +1,2 @@
 # Only One Corp.
-[Main page](https://dimagiza.github.io/)
+[Main page](https://dimagiza.github.io/index.html)
