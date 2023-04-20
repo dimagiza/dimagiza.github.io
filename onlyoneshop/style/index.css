@@ -71,7 +71,7 @@ nav a img {
 }
 
 
-@media (width <= 740px) {
+@media (width <= 1200px) {
     .cloth {
         flex-direction: column;
         text-align: center;
