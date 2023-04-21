@@ -16,30 +16,31 @@
                   <li class="breadcrumb-item"><a href="../index.html">Home</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Only One Store</li>
                 </ol>
-                <div class="navBag">
-                    <a href=><img src="icons/bag.svg" alt="Bag"></a>
-                    <a href=><img src="icons/person.svg" alt="Profile"></a>
-                </div>
             </nav>
             <h1>Only One Store</h1>
         </header>
-        <section class="cards">
-            <button type="button" class="btn btn-outline-secondary" onclick="prev()">Prev</button>
-            <div id="cloth" class="cloth">
-                <img src="img/cloth01.jpeg"/>
-                <div> 
-                    <h3 id="brand">Supreme</h3>
-                    <h4 id="model">Jacket</h4>
-                    <p id="price">$2.000</p>
-                    <button type="button" class="btn btn-outline-dark" style="margin: 0;">Add to bag!</button>
-                </div>
-            </div>
-            <button type="button" class="btn btn-outline-secondary" onclick="next()">Next</button>
-        </section>
-        <footer class="social">
-            <a href="https://t.me/og_dudee"><img src="icons/telegram.svg" alt="Telegram"></a>
-            <a href="https://github.com/dimagiza"><img src="icons/github.svg" alt="GitHub"></a>
-            <a href="https://www.facebook.com/profile.php?id=100089114174302"><img src="icons/facebook.svg" alt="Facebook"></a>
+        <main class="cards">
+            <section id="cloth" class="cloth">
+                <h3>Lookbook</h3>
+                <article class="clothImg">
+                    <img src="img/cloth01.jpeg"/>
+                    <div class="clothText">
+                        <div>
+                            <h4 id="brand">Supreme</h4>
+                            <p id="model">Jacket</p>
+                        </div>
+                    <!--<button type="button" class="btn btn-outline-dark" onclick="prev()">Prev</button>-->
+                        <button type="button" class="btn btn-outline-dark" onclick="next()">Next</button>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <nav class="social">
+                <a href="https://t.me/og_dudee"><img src="icons/telegram.svg" alt="Telegram"></a>
+                <a href="https://github.com/dimagiza"><img src="icons/github.svg" alt="GitHub"></a>
+                <a href="https://www.facebook.com/profile.php?id=100089114174302"><img src="icons/facebook.svg" alt="Facebook"></a>
+            </nav>
         </footer>
     </body>
 </html>
