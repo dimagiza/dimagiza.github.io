@@ -1,42 +1,120 @@
-import telebot
-from telebot import types
+#TOKEN = "6142960419:AAEU9BzyWThxQXHDAQQAaVUEEfxdLLF85ew"
+import logging
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ForceReply
+from telegram.ext import (
+    Updater,
+    CommandHandler,
+    CallbackContext,
+    CallbackQueryHandler,
+    ConversationHandler,
+    MessageHandler,
+    Filters,
+)
 
-bot = telebot.TeleBot('6142960419:AAEU9BzyWThxQXHDAQQAaVUEEfxdLLF85ew')
+TOKEN = "6142960419:AAEU9BzyWThxQXHDAQQAaVUEEfxdLLF85ew"
 
-#Поиск курса валюты
-import requests
-from bs4 import BeautifulSoup
+RATE = 2.5
 
-def get_exchange_rate():
-    url = "https://www.google.com/search?q=курс+бата+к+рублю"
-    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"}
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
-    response = requests.get(url, headers=headers)
-    soup = BeautifulSoup(response.text, "html.parser")
+CHOOSE_CURRENCY, ENTER_AMOUNT = range(2)
 
-    # Ищем блок с курсом валюты
-    rate_div = soup.find("div", {"class": "BNeawe iBp4i AP7Wnd"})
-    if rate_div:
-        rate = float(rate_div.text.split()[0].replace(',', '.'))
-        return rate
+def start(update: Update, _: CallbackContext) -> None:
+    chat_id = update.effective_chat.id
+    welcome_message = "Привет"
+
+    keyboard = [
+        [
+            InlineKeyboardButton("Меню", callback_data="menu"),
+            InlineKeyboardButton("Наш канал", url="https://t.me/by_onlyone"),
+        ]
+    ]
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    _.bot.send_message(chat_id=chat_id, text=welcome_message, reply_markup=reply_markup)
+
+def menu_callback(update: Update, _: CallbackContext) -> None:
+    chat_id = update.effective_chat.id
+    query = update.callback_query
+
+    query.answer()
+
+    thailand_message = "Таиланд 🇹🇭"
+
+    keyboard = [
+        [
+            InlineKeyboardButton("Обмен валюты", callback_data="currency_exchange"),
+            InlineKeyboardButton("Скидываемся на опт", url="https://t.me/weedhustla"),
+        ]
+    ]
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    _.bot.send_message(chat_id=chat_id, text=thailand_message, reply_markup=reply_markup)
+
+def currency_exchange_callback(update: Update, _: CallbackContext) -> None:
+    chat_id = update.effective_chat.id
+    query = update.callback_query
+
+    query.answer()
+
+    exchange_rate_message = f"Курс: {RATE}"
+
+    keyboard = [
+        [
+            InlineKeyboardButton("Рассчитать", callback_data="calculate_currency"),
+            InlineKeyboardButton("Обменять", url="https://t.me/og_dudee"),
+        ]
+    ]
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    _.bot.send_message(chat_id=chat_id, text=exchange_rate_message, reply_markup=reply_markup)
+
+def calculate_currency_callback(update: Update, _: CallbackContext) -> int:
+    chat_id = update.effective_chat.id
+    query = update.callback_query
+
+    query.answer()
+
+    choose_currency_message = "Выбери валюту"
+
+    keyboard = [
+        [
+            InlineKeyboardButton("RUB", callback_data="RUB"),
+            InlineKeyboardButton("THB", callback_data="THB"),
+        ]
+    ]
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    _.bot.send_message(chat_id=chat_id, text=choose_currency_message, reply_markup=reply_markup)
+
+    return CHOOSE_CURRENCY
+
+def choose_currency(update: Update, context: CallbackContext) -> int:
+    query = update.callback_query
+    query.answer()
+
+    context.user_data['currency'] = query.data
+
+    if query.data == "RUB":
+        message = "Сколько рублей нужно разменять?"
     else:
-        raise Exception("Не удалось найти курс валюты")
+        message = "Сколько бат нужно получить?"
 
-#Cтартовая команда
-@bot.message_handler(commands=['start']) 
-def start(message):
+    query.edit_message_text(text=message, reply_markup=ForceReply())
 
-    markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
-    btn1 = types.KeyboardButton("Курс baht/rub")
-    markup.add(btn1)
-    bot.send_message(message.from_user.id, "Приветсвую! Я бот сообщества Only One.", reply_markup=markup)
+    return ENTER_AMOUNT
 
-@bot.message_handler(content_types=['text'])
-def get_text_messages(message):
+def main() -> None:
+    updater = Updater(TOKEN, use_context=True)
 
-    #Курс
-    if message.text == 'Курс baht/rub':
-        exchange_rate = get_exchange_rate()
-        print("Курс бата к рублю:", exchange_rate)
+    dispatcher = updater.dispatcher
 
-bot.polling(none_stop=True, interval=0)
+    dispatcher.add_handler(CommandHandler("start", start))
+    dispatcher.add_handler(CallbackQueryHandler(menu_callback))
+
+    updater.start_polling()
+
+    updater.idle()
+
+if __name__ == '__main__':
+    main()
